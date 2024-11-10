@@ -1,0 +1,14 @@
+@AspNetWebApi_HostAddress = http://localhost:5079
+
+GET {{AspNetWebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+POST {{AspNetWebApi_HostAddress}}/api/Function1
+Content-Type: application/json
+{ 
+  "value" : "Welcome to .NET Conf 2024"
+}
+
+###
