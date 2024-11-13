@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35424.110 d17.12
+VisualStudioVersion = 17.12.35424.110
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetWebApi", "AspNetWebApi\AspNetWebApi.csproj", "{F286345C-98A5-48C3-B73F-F24CCF7DCD06}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorFrontEnd", "BlazorFrontEnd\BlazorFrontEnd.csproj", "{DAEB0F59-152C-41AB-9C92-A7FC656B1CF1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +17,15 @@ Global
 		{F286345C-98A5-48C3-B73F-F24CCF7DCD06}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F286345C-98A5-48C3-B73F-F24CCF7DCD06}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F286345C-98A5-48C3-B73F-F24CCF7DCD06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAEB0F59-152C-41AB-9C92-A7FC656B1CF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAEB0F59-152C-41AB-9C92-A7FC656B1CF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAEB0F59-152C-41AB-9C92-A7FC656B1CF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAEB0F59-152C-41AB-9C92-A7FC656B1CF1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EDE65B7D-2A81-42FA-A0FA-04B8F50BD285}
 	EndGlobalSection
 EndGlobal

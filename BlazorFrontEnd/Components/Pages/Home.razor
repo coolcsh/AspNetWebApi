@@ -1,0 +1,46 @@
+﻿@page "/"
+@using System.Text.Json.Serialization
+@inject ILogger<Home> Logger
+@inject IHttpClientFactory ClientFactory
+@rendermode InteractiveServer
+
+<PageTitle>Home</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<input @bind="Input" />
+
+<p role="status">Result: @Result</p>
+
+<button class="btn btn-primary" @onclick="Submit">Click me</button>
+
+
+@code {
+    private string? Input { get; set; }
+    private string? Result { get; set; }
+
+    private async Task Submit()
+    {
+        Logger.LogInformation(Input);
+        HttpClient client = ClientFactory.CreateClient("api");
+        Result = await PostAsJsonAsync(client, "http://localhost:5079/api/function1", Input!);
+        Input = "";
+    }
+
+    public record InputText([property: JsonPropertyName("value")] string Value);
+
+    public record PigLatinText([property: JsonPropertyName("value")] string Value);
+
+    public async Task<string> PostAsJsonAsync(HttpClient httpClient, string uri, string value)
+    {
+        using HttpResponseMessage response = await httpClient.PostAsJsonAsync(uri, new InputText(Value: value));
+        response.EnsureSuccessStatusCode();
+        var result = await response.Content.ReadFromJsonAsync<PigLatinText>();
+        return result!.Value;
+    }
+
+}
+
+
